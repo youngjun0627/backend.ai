@@ -539,12 +539,12 @@ $docker_sudo docker ps | grep "${ENV_ID}"   # You should see three containers he
 # Clone source codes
 show_info "Cloning backend.ai source codes..."
 cd "${INSTALL_PATH}"
-git clone --branch "${SERVER_BRANCH}" https://github.com/lablup/backend.ai-manager manager
-git clone --branch "${SERVER_BRANCH}" https://github.com/lablup/backend.ai-agent agent
-git clone --branch "${SERVER_BRANCH}" https://github.com/lablup/backend.ai-common common
+git clone --branch "feature/select-and-update-kernelpullprogress" https://github.com/youngjun0627/backend.ai-manager manager
+git clone --branch "feat/produce_kernel_pull_progress_event" https://github.com/youngjun0627/backend.ai-agent agent
+git clone --branch "feature/kernelpullprogress-event" https://github.com/youngjun0627/backend.ai-common common
 git clone --branch "${SERVER_BRANCH}" https://github.com/lablup/backend.ai-storage-proxy storage-proxy
 git clone --branch "${SERVER_BRANCH}" --recurse-submodules https://github.com/lablup/backend.ai-webserver webserver
-git clone --branch "${CLIENT_BRANCH}" https://github.com/lablup/backend.ai-client-py client-py
+git clone --branch "feat/display-kernelpullprogress" https://github.com/youngjun0627/backend.ai-client-py client-py
 
 if [ $ENABLE_CUDA -eq 1 ]; then
   if [ "$CUDA_BRANCH" == "mock" ]; then
